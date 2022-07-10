@@ -1,0 +1,17 @@
+.main-container {
+    display: flex;
+    border: solid palegreen;
+}
+
+.grid-container {
+    display: grid;
+    width: 600px;
+    height: 600px;
+    background-color: grey;
+    border: black solid 1px;
+}
+
+.grid-box {
+    border: black solid .5px;
+}
+
