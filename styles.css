@@ -1,6 +1,38 @@
 .main-container {
     display: flex;
     border: solid palegreen;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.options-container, .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button, input {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+button.active {
+    background-color: bisque;
+}
+
+button:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
 }
 
 .grid-container {
@@ -9,9 +41,11 @@
     height: 600px;
     background-color: grey;
     border: black solid 1px;
+    box-shadow: rgba(0, 0, 0, .24) 0px 3px 8px;
 }
 
 .grid-box {
     border: black solid .5px;
+    user-select: none;
 }
 
