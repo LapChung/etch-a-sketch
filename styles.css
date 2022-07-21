@@ -27,7 +27,7 @@ button {
 }
 
 button.active {
-    background-color: bisque;
+    background-color: tan;
 }
 
 button:hover {
@@ -39,7 +39,7 @@ button:hover {
     display: grid;
     width: 600px;
     height: 600px;
-    background-color: grey;
+    background-color: white;
     border: black solid 1px;
     box-shadow: rgba(0, 0, 0, .24) 0px 3px 8px;
 }

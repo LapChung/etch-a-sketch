@@ -26,12 +26,10 @@ const createGrid = () => {
     gridBox.classList.add("grid-box");
     gridContainer.append(gridBox);
 
-    gridBox.addEventListener("mousedown", (event) => {
-      event.target.style.backgroundColor = colorPicker.value;
-    });
+    gridBox.addEventListener("mousedown", colorChanger);
     gridBox.addEventListener("mouseover", (event) => {
       if (isMouseDown) {
-        event.target.style.backgroundColor = colorPicker.value;
+        colorChanger(event);
       }
     });
   }
@@ -41,6 +39,11 @@ let colorBtn = document.querySelector("#colorBtn");
 let rainbowBtn = document.querySelector("#rainbowBtn");
 let eraseBtn = document.querySelector("#eraseBtn");
 let clearBtn = document.querySelector("#clearBtn");
+
+clearBtn.addEventListener("click", () => {
+  createGrid();
+});
+
 let currentMode = "color";
 
 const setNewMode = (newMode) => {
@@ -79,6 +82,24 @@ const activeButton = (newMode) => {
       break;
     default:
       text = "No button found";
+  }
+};
+
+const colorChanger = (event) => {
+  switch (currentMode) {
+    case "color":
+      event.target.style.backgroundColor = colorPicker.value;
+      break;
+    case "rainbow":
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      event.target.style.backgroundColor = `rgb(${r},${g},${b})`;
+      break;
+    case "erase":
+      event.target.style.backgroundColor = "white";
+    default:
+      text = "No color found";
   }
 };
 
